@@ -1,16 +1,100 @@
-# React + Vite
+# Anita – School Enquiry Chatbot Widget
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A floating chatbot widget designed for school websites to handle common parent and student queries.  
+The chatbot appears at the bottom-right of the screen and helps users with admissions, fees, timetable, marks, and career-related queries through a clean and interactive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- Floating chatbot widget (bottom-right corner)
+- Friendly chatbot persona **Anita**
+- Clean UI with dark background and blue/orange/yellow theme
+- Predefined quick-reply buttons
+- Context-aware conversation flow
+- Automatic reset on exit
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Supported Queries
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Admission Enquiry
+- Collects:
+  - Parent Name
+  - Phone Number
+  - Class for admission
+- Displays confirmation message
+- Asks if the user has any other queries
+
+---
+
+### 2. Fees & Payment
+- Asks for the class
+- Redirects based on class:
+  - **Classes 1–8** → Junior fee structure page
+  - **Classes 9–12** → Senior fee structure page
+- Follow-up: *Any other queries?*
+
+---
+
+### 3. Timetable
+- Provides a direct link to the timetable/parent portal
+- Follow-up prompt included
+
+---
+
+### 4. Marks
+- Asks for the class
+- Logic:
+  - **10th / 12th** → Results will be out in July
+  - **Other classes** → Student portal link
+- Follow-up prompt included
+
+---
+
+### 5. Careers With Us
+- Asks for:
+  - Name
+  - Email ID
+- Redirects users to the school’s careers page for detailed opportunities
+- Follow-up prompt included
+
+---
+
+## 🔁 Conversation Flow
+
+- After **every query**, the chatbot asks:
+  > *Do you have any other queries?*
+- Options:
+  - **Yes** → Displays all main options again
+  - **No, I want to exit** →  
+    - Displays exit message  
+    - Closes chatbot  
+    - Resets state  
+    - Starts fresh on next open
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React (Functional Components + Hooks)
+- **Styling:** Inline CSS (JS objects)
+- **Backend:** Not required (logic handled on frontend)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm
+
+### Installation
+
+```bash
+npm install
+npm run dev
+```
+
+- The app will start running on http://localhost:3000
+
