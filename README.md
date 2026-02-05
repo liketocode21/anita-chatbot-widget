@@ -96,5 +96,5 @@ npm install
 npm run dev
 ```
 
-- The app will start running on http://localhost:5300
+- The app will start running on http://localhost:5173
 
